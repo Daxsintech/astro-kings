@@ -47,7 +47,9 @@ export function Glass({ as:Tag='div', className='', strong=false, soft=false, st
   return <Tag className={`glass ${strong?'glass-strong':''} ${soft?'glass-soft':''} ${className}`} style={style} {...rest}>{children}</Tag>;
 }
 
-export function Btn({ kind='primary', size='md', className='', icon, iconEnd, children, ...rest }){
+/* Btn — pass `href` to render a link styled as a button (valid HTML, unlike
+   <a><button/></a>); without it this is a plain <button>, unchanged. */
+export function Btn({ kind='primary', size='md', className='', icon, iconEnd, children, href, ...rest }){
   const sz = size==='lg' ? 'h-14 px-7 text-[15px]' : size==='sm' ? 'h-9 px-4 text-[13px]' : 'h-12 px-6 text-[14px]';
   const base = `inline-flex items-center justify-center gap-2 rounded-full font-medium transition-all duration-200 active:scale-[.97] whitespace-nowrap`;
   let look;
@@ -55,12 +57,37 @@ export function Btn({ kind='primary', size='md', className='', icon, iconEnd, ch
   else if (kind==='glass') look = 'glass glass-soft text-white hover:bg-white/10';
   else if (kind==='ghost') look = 'text-white/80 hover:text-white hover:bg-white/8';
   else if (kind==='outline') look = 'text-white border border-white/22 hover:border-white/45 hover:bg-white/5';
+  const El = href ? 'a' : 'button';
   return (
-    <button className={`${base} ${sz} ${look} ${className}`} {...rest}>
+    <El href={href} className={`${base} ${sz} ${look} ${className}`} {...rest}>
       {icon ? <span className="-ml-0.5 grid place-items-center" style={{width:18,height:18}}>{icon}</span> : null}
       {children}
       {iconEnd ? <span className="-mr-0.5 grid place-items-center" style={{width:18,height:18}}>{iconEnd}</span> : null}
-    </button>
+    </El>
+  );
+}
+
+/* CardPhoto — a photo that fills the top of a padded Glass card, edge to edge.
+   Pass negative margins that match the card's padding via `className`
+   (e.g. "-mx-8 -mt-8 mb-7" for p-8). Fades into the card at the bottom. */
+export function CardPhoto({ src, alt, width, height, position='center', h='h-52 sm:h-60 lg:h-64', className='' }){
+  return (
+    <div className={`relative overflow-hidden ${h} ${className}`}>
+      <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" draggable="false" style={{objectPosition:position}} className="absolute inset-0 h-full w-full object-cover" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-black/45 to-transparent"></div>
+    </div>
+  );
+}
+
+/* SectionPhoto — a photo band inside a page section: rounded, hairline border like
+   the glass cards, soft fade into the page at the bottom. Pass the image's real
+   width/height so the browser reserves space (no layout shift). */
+export function SectionPhoto({ src, alt, width, height, aspect='aspect-[16/10] md:aspect-[21/9]', className='' }){
+  return (
+    <div className={`relative w-full overflow-hidden rounded-[30px] border border-[color:var(--glass-border)] ${aspect} ${className}`}>
+      <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" draggable="false" className="absolute inset-0 h-full w-full object-cover" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#06090A]/60 to-transparent"></div>
+    </div>
   );
 }
 

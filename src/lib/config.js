@@ -29,6 +29,29 @@ export const BOOKING_PLATFORM_URL = 'https://www.planyo.com/booking.php?calendar
    custom API booking flow (Path 2) is built later. */
 export const PLANYO_RESOURCE_IDS = [58246, 58245, 58244, 185941];
 
+/* Map each of our pitch cards (PITCHES id) to its Planyo resource_id, so the
+   native pitch picker on #booking can filter the embedded widget / deep-link
+   straight to that pitch.
+   ⚠️ Leave a pitch null until its ID is CONFIRMED — a wrong guess sends people
+   to the wrong pitch. While null, that card just opens the full calendar.
+   The four known resource IDs are in PLANYO_RESOURCE_IDS above; we don't yet
+   know which is which pitch, so all are null for now. */
+export const PLANYO_PITCH_RESOURCE = {
+  classic: null,
+  samba:   null,
+  big:     null,
+  mini:    null,
+};
+
+/* Build the Planyo booking URL, optionally pre-set to one resource and start
+   date. `startDate` is best-effort (YYYY-MM-DD): if Planyo's date format differs
+   it's simply ignored and the customer picks the day on Planyo — never a
+   dead-end. */
+export const planyoUrl = (resourceId, startDate) =>
+  PLANYO_EMBED_URL
+  + (resourceId ? `&resource_id=${resourceId}` : '')
+  + (startDate ? `&start_date=${startDate}` : '');
+
 /* Where enquiry + Subs Bench form submissions go.
 
    ⚠️ REQUIRED BEFORE LAUNCH — currently empty, so the forms tell people to
@@ -52,6 +75,12 @@ export const PLANYO_RESOURCE_IDS = [58246, 58245, 58244, 185941];
    account, have the venue confirm it by email, then switch the form's
    recipient. The URL below does NOT change when you do that. */
 export const ENQUIRY_ENDPOINT = 'https://formspree.io/f/mvkgdpok';
+
+/* ---------------------------------------------------------------- reviews */
+/* The venue's Google Business reviews link. Leave '' until the client supplies
+   it — the "read our reviews on Google" link stays hidden while blank.
+   Never add ratings or quotes by hand: invented reviews are illegal (DMCC Act). */
+export const GOOGLE_REVIEWS_URL = '';
 
 /* ---------------------------------------------------------------- display only */
 /* Indicative prices shown on marketing pages. The ACTUAL price charged is
