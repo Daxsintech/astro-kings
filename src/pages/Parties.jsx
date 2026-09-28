@@ -7,7 +7,7 @@
 import { I } from '../lib/icons.jsx';
 import { scrollToId } from '../lib/router.js';
 import { CONTACT } from '../lib/data.js';
-import { Glass, Btn, Tag, Eyebrow } from '../components/ui.jsx';
+import { Glass, Btn, Tag, Eyebrow, CardPhoto } from '../components/ui.jsx';
 import { EnquiryForm } from '../components/Enquiry.jsx';
 import { Section } from './Home.jsx';
 import { Footer } from '../components/Nav.jsx';
@@ -89,7 +89,9 @@ export function Parties(){
       {/* ---------- enquire direct ---------- */}
       <section id="party-enquiry" className="mx-auto mt-24 max-w-6xl px-6">
         <Glass strong className="relative overflow-hidden rounded-[34px] p-8 md:p-12">
-          <div className="pointer-events-none absolute -left-16 -bottom-16 h-64 w-64 rounded-full opacity-20 blur-3xl" style={{background:PINK}}></div>
+          <div className="pointer-events-none !absolute -left-16 -bottom-16 h-64 w-64 rounded-full opacity-20 blur-3xl" style={{background:PINK}}></div>
+          {/* TEMPORARY Pexels placeholder (not Astro Kings) — see IMAGE_SOURCES.md */}
+          <CardPhoto src="/images/party-christmas.webp" alt="Young players hugging someone dressed as Santa" width={1600} height={1600} position="center 24%" h="h-64 sm:h-80 lg:h-96" className="-mx-8 -mt-8 mb-8 md:-mx-12 md:-mt-12 md:mb-10" />
           <div className="relative grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <Eyebrow>enquire direct</Eyebrow>
