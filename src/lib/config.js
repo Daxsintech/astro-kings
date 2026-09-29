@@ -87,7 +87,7 @@ export const GOOGLE_REVIEWS_URL = '';
    always whatever Planyo calculates at booking time — these are for display
    and must be kept in step with Planyo's pricing manager. */
 export const MAX_HOURS      = 2;     // longest bookable run shown in marketing copy
-export const CANCEL_WINDOW_HRS = 24; // shown in the cancellation policy text
+export const CANCEL_WINDOW_HRS = 48; // shown in the cancellation policy text
 export const PAYPLAY_PRICE  = 4.5;   // U18 daily pay & play, per person
 
 /* ---------------------------------------------------------------- security */

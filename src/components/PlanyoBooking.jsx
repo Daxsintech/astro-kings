@@ -30,7 +30,7 @@ function TrustRow(){
   const items = [
     { icon: I.bolt,  label: 'instant confirmation' },
     { icon: I.lock,  label: 'secure card payment' },
-    { icon: I.clock, label: 'free cancellation 24h before' },
+    { icon: I.clock, label: 'free cancellation 48h before' },
   ];
   return (
     <div className="mt-6 flex flex-wrap items-center gap-x-7 gap-y-2.5">

@@ -1,36 +1,32 @@
 /* Shop.jsx — The Football Shop: items sold at the centre (footballs, grip socks,
    Notts Olympic kits & training wear). No online checkout — bought at reception.
 
-   Look: clean teal retail identity, scoped to this page. Product tiles use
-   iconized gradients as placeholders until real photos are supplied.
-   TODO: real product photos, prices, sizes & stock. */
+   Look: clean teal retail identity, scoped to this page.
+
+   NOTE: there are no product photos and the centre has not given us prices, so
+   this page deliberately does NOT show image placeholders or guessed prices —
+   an empty grey tile reads as broken, and a wrong price is worse than none.
+   It presents the range as a list of what's stocked, and sends people to
+   reception for prices, sizes and stock. */
 
 import { useState } from 'react';
 import { I } from '../lib/icons.jsx';
 import { CONTACT } from '../lib/data.js';
-import { Glass, Btn, Tag } from '../components/ui.jsx';
+import { Glass, Btn } from '../components/ui.jsx';
 import { Footer } from '../components/Nav.jsx';
 
 const TEAL = '#22C3B8';
-const BLUE = '#38BDF8';
-const MINT = '#34D399';
 
-/* TODO: replace placeholder prices with the centre's real range + photos.
-   priceConfirmed / tagConfirmed: a price or a "best seller" tag is only shown once
-   the centre has confirmed it — until then the tile says "ask at reception". */
 const PRODUCTS = [
-  { name:'Match football',             cat:'footballs',     price:'£15', priceConfirmed:false, tag:'',            tagConfirmed:false, c:TEAL, ic:I.ball,   desc:'Size 4 & 5 · training and match quality.' },
-  { name:'Grip socks',                 cat:'grip socks',    price:'£8',  priceConfirmed:false, tag:'best seller', tagConfirmed:false, c:BLUE, ic:I.bolt,   desc:'Anti-slip grip socks — all sizes.' },
-  { name:'Notts Olympic home kit',     cat:'club kits',     price:'£35', priceConfirmed:false, tag:'club',        tagConfirmed:false, c:MINT, ic:I.shield, desc:'Official Notts Olympic FC shirt, shorts & socks.' },
-  { name:'Notts Olympic training top', cat:'training wear', price:'£25', priceConfirmed:false, tag:'club',        tagConfirmed:false, c:TEAL, ic:I.star,   desc:'Club training wear — adults & juniors.' },
-  { name:'Shin pads',                  cat:'accessories',   price:'£10', priceConfirmed:false, tag:'',            tagConfirmed:false, c:BLUE, ic:I.shield, desc:'Junior and adult sizes.' },
-  { name:'Water bottle',               cat:'accessories',   price:'£5',  priceConfirmed:false, tag:'',            tagConfirmed:false, c:MINT, ic:I.cafe,   desc:'750ml squeeze bottle.' },
+  { name:'Match footballs',            cat:'footballs',     desc:'Size 4 & 5 — training and match quality.' },
+  { name:'Grip socks',                 cat:'grip socks',    desc:'Anti-slip grip socks, all sizes.' },
+  { name:'Notts Olympic home kit',     cat:'club kits',     desc:'Official club shirt, shorts & socks.' },
+  { name:'Notts Olympic training top', cat:'training wear', desc:'Club training wear — adults & juniors.' },
+  { name:'Shin pads',                  cat:'accessories',   desc:'Junior and adult sizes.' },
+  { name:'Water bottles',              cat:'accessories',   desc:'Squeeze bottles for training and matches.' },
 ];
 
 const CATS = ['all','footballs','grip socks','club kits','training wear','accessories'];
-
-/* "best seller" is a claim, so it needs confirming; descriptive tags like "club" always show */
-const showTag = (p) => p.tag && (p.tag !== 'best seller' || p.tagConfirmed);
 
 export function Shop(){
   const [cat,setCat] = useState('all');
@@ -74,33 +70,22 @@ export function Shop(){
       <section className="mx-auto mt-12 max-w-6xl px-6">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {list.map((p,i)=>(
-            <Glass key={p.name} className="group flex flex-col overflow-hidden rounded-3xl transition-transform duration-300 hover:-translate-y-1.5 fade-up" style={{animationDelay:(i*.05)+'s'}}>
-              {/* iconized placeholder tile */}
-              <div className="relative aspect-[4/3] w-full overflow-hidden" style={{background:`linear-gradient(150deg, ${p.c}26, rgba(255,255,255,.02))`}}>
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
-                <div className="absolute inset-0 grid place-items-center">
-                  <span className="transition-transform duration-300 group-hover:scale-110" style={{width:54,height:54,color:p.c}}>{p.ic({})}</span>
-                </div>
-              </div>
-              <div className="flex flex-1 flex-col p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="text-[16px] font-medium">{p.name}</div>
-                  {showTag(p) ? <Tag accent={p.tag==='best seller'}>{p.tag}</Tag> : null}
-                </div>
-                <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-white/60">{p.desc}</p>
-                <div className="mt-4 flex items-center justify-between">
-                  {p.priceConfirmed
-                    ? <span className="tnum text-xl font-semibold" style={{color:p.c}}>{p.price}</span>
-                    : <span className="text-[13px] font-medium" style={{color:p.c}}>ask at reception for price</span>}
-                  <span className="text-[12px] text-white/45">buy at reception</span>
-                </div>
+            <Glass key={p.name} className="flex flex-col rounded-3xl p-5 transition-transform duration-300 hover:-translate-y-1 fade-up" style={{animationDelay:(i*.05)+'s'}}>
+              <div className="text-[16px] font-medium">{p.name}</div>
+              <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-white/60">{p.desc}</p>
+              <div className="mt-4 flex items-center gap-2 border-t border-white/8 pt-3">
+                <span style={{width:13,height:13,color:TEAL}}>{I.pin({})}</span>
+                <span className="text-[12.5px] text-white/50">in stock at reception</span>
               </div>
             </Glass>
           ))}
         </div>
         {list.length===0 ? <p className="mt-6 text-center text-[14px] text-white/55" role="status">Nothing in “{cat}” yet — ask at reception.</p> : null}
 
-        <p className="mt-6 text-center text-[13px] text-white/40">Prices &amp; range are a guide — real stock, photos and sizes coming soon.</p>
+        <p className="mt-6 text-center text-[13px] leading-relaxed text-white/45">
+          Everything here is available to buy at reception whenever we’re open —
+          pop in and ask, and we’ll sort you out with sizes and prices.
+        </p>
 
         {/* order / contact callout */}
         <Glass strong className="relative mt-10 flex flex-col items-center gap-4 overflow-hidden rounded-[30px] p-8 text-center md:flex-row md:justify-between md:text-left">

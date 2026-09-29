@@ -186,28 +186,6 @@ function PitchCard({ p, i }){
   );
 }
 
-function FacilityRow(){
-  const f = [
-    { ic:I.bolt, t:'LED floodlights' },
-    { ic:I.shield, t:'4G rubber-crumb' },
-    { ic:I.shower, t:'Hot showers' },
-    { ic:I.locker, t:'Secure lockers' },
-    { ic:I.cafe, t:'On-site café' },
-    { ic:I.whistle, t:'Rebound boards' },
-  ];
-  return (
-    <Glass strong className="rounded-[30px] p-6 md:p-8">
-      <div className="grid grid-cols-2 gap-x-6 gap-y-7 sm:grid-cols-3 md:grid-cols-6">
-        {f.map((x,i)=>(
-          <div key={i} className="flex flex-col items-start gap-3">
-            <span className="glass grid h-12 w-12 place-items-center rounded-2xl accent-text"><span style={{width:22,height:22}}>{x.ic({})}</span></span>
-            <span className="text-[13.5px] text-white/75">{x.t}</span>
-          </div>
-        ))}
-      </div>
-    </Glass>
-  );
-}
 
 export function Section({ eyebrow, title, action, children }){
   return (
@@ -282,8 +260,6 @@ export function Home(){
         action={<a href="#browse" className="hidden md:block"><Btn kind="outline" size="sm" iconEnd={I.arrow({})}>see all pitches</Btn></a>}>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{PITCHES.map((p,i)=><PitchCard key={p.id} p={p} i={i} />)}</div>
       </Section>
-
-      <Section eyebrow="everything sorted" title="more than just a pitch"><FacilityRow /></Section>
 
       <section className="mx-auto mt-24 max-w-7xl px-6">
         <Glass strong className="relative overflow-hidden rounded-[34px] p-10 text-center md:p-16">

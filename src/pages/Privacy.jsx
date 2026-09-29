@@ -1,11 +1,16 @@
 /* Privacy.jsx — privacy policy.
 
-   ⚠️ DRAFT — this is a starting template based on what the site actually does.
-   It has NOT been reviewed by a solicitor. Dan should check it (or have it
-   checked) before launch, and confirm every factual claim below is true:
-   retention periods, who data is shared with, and the ICO registration.
+   Facts below (legal entities, ICO registration, retention periods, children's
+   data handling) are taken from Astro Kings' existing published privacy policy
+   at astro-kings.com/contact-us/disclaimer-and-privacy-policy/ and describe what
+   THIS site actually does.
 
-   Anything marked TODO must be confirmed with Dan before this goes live. */
+   ⚠️ Still not reviewed by a solicitor — worth Dan having it checked.
+
+   ⚠️ IF Facebook Pixel or Google Tag Manager are added to this site (the old
+   WordPress site runs both), the cookies section below becomes untrue and a
+   cookie consent banner is legally required. Do not add trackers without
+   updating this page. */
 
 import { CONTACT } from '../lib/data.js';
 import { PageHead } from '../components/ui.jsx';
@@ -31,8 +36,14 @@ export function Privacy(){
 
         <Section title="who we are">
           <p>
-            Astro Kings, {CONTACT.addr}. We are the data controller for the
-            personal information described in this policy. You can reach us at{' '}
+            Astro Kings Ltd, {CONTACT.addr}. Astro Kings Ltd is owned by
+            Nineteen Twelve Holdings Ltd — where this policy says “we” or “us”,
+            it means both together.
+          </p>
+          <p>
+            We are the data controller for the personal information described in
+            this policy, and we are registered with the Information
+            Commissioner’s Office (ICO) in the UK. You can reach us at{' '}
             <a href={'mailto:'+CONTACT.email} className="accent-text hover:underline">{CONTACT.email}</a>{' '}
             or {CONTACT.phone}.
           </p>
@@ -55,7 +66,9 @@ export function Privacy(){
             about it.
           </p>
           <p>
-            If you would like us to delete a child's details, contact us at{' '}
+            Photographs of children used on this website are published with the
+            consent of their parent or guardian. If you would like a photograph
+            removed, or a child’s details deleted, contact us at{' '}
             <a href={'mailto:'+CONTACT.email} className="accent-text hover:underline">{CONTACT.email}</a> and we will do so.
           </p>
         </Section>
@@ -81,20 +94,32 @@ export function Privacy(){
             not an automated bot.
           </p>
           <p>
-            {/* TODO: confirm with Dan whether the site still runs Facebook Pixel
-                and Google Tag Manager, as the current site does. If it does, they
-                MUST be listed here and need a cookie consent banner. */}
-            We do not share your information with anyone else unless we are
-            legally required to.
+            <span className="text-white/85">Formspree</span> — the service that
+            delivers enquiry and sign-up forms from this site to our inbox.
+          </p>
+          <p>
+            We may also share information with regulators, the police or other
+            competent authorities where we are legally required to. Beyond that,
+            we do not share your information with anyone else, and we never sell
+            it.
           </p>
         </Section>
 
         <Section title="how long we keep it">
           <p>
-            {/* TODO: confirm actual retention periods with Dan */}
-            We keep enquiry and sign-up details only as long as we need them to
-            deal with your request and for our own records, and then delete them.
-            Booking records are held by Planyo under their retention policy.
+            We keep personal data, including transaction history and complaints,
+            for up to seven years after our last contact with you — so that we
+            can answer questions, claims or complaints, and meet the regulations
+            that apply to us.
+          </p>
+          <p>
+            CCTV recordings at the venue are kept for 21 days.
+          </p>
+          <p>
+            Booking records are held by Planyo under their own retention policy.
+            After these periods your data is permanently deleted from our
+            systems, unless we have to keep it for a legal reason — for example
+            if you were involved in a safety incident.
           </p>
         </Section>
 
@@ -114,10 +139,9 @@ export function Privacy(){
 
         <Section title="cookies">
           <p>
-            {/* TODO: if analytics or Facebook Pixel are added, this section must
-                be expanded and a cookie consent banner added before launch. */}
-            This website does not set tracking cookies. The embedded booking
-            widget and map may set cookies necessary for them to work.
+            This website does not set advertising or analytics cookies, and does
+            not track you across other websites. The embedded booking widget and
+            map may set cookies that are necessary for them to work.
           </p>
         </Section>
       </div>
