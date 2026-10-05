@@ -103,7 +103,7 @@ export function Hero({ variant='stacked' }){
         <div className="relative z-10 mx-auto max-w-4xl text-center fade-up">
           <Tag accent className="mb-6">⚡ brand new 4g pitches</Tag>
           <h1 className="hero-title text-[17vw] font-semibold lowercase md:text-[9vw]">new <span className="accent-text">4g</span> pitches</h1>
-          <p className="mx-auto mt-6 max-w-xl text-[16px] leading-relaxed text-white/65">Football, leagues, birthday parties, stag, hen and corporate events — Nottingham's best 5-a-side centre.</p>
+          <p className="mx-auto mt-6 max-w-xl text-[16px] leading-relaxed text-white/65">Football, leagues, birthday parties, stag, hen and corporate events — Nottingham’s best 5-a-side centre.</p>
         </div>
         <div className="relative z-10 mx-auto mt-10 max-w-3xl fade-up" style={{animationDelay:'.08s'}}><QuickBook /></div>
         <div className="relative z-10 mx-auto mt-12 flex max-w-3xl items-center justify-center gap-12">{stats}</div>
@@ -266,7 +266,7 @@ export function Home(){
           <div className="pointer-events-none absolute -inset-20 opacity-60" style={{background:'radial-gradient(40% 60% at 50% 0%, color-mix(in oklab, var(--accent), transparent 70%), transparent)'}}></div>
           <div className="relative">
             <h3 className="hero-title text-4xl md:text-6xl font-semibold lowercase">ready when you are</h3>
-            <p className="mx-auto mt-4 max-w-lg text-[15px] text-white/60">Pick a slot, rally the lads, and we'll have the floodlights on.</p>
+            <p className="mx-auto mt-4 max-w-lg text-[15px] text-white/60">Pick a slot, rally the lads, and we’ll have the floodlights on.</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
               <a href="#booking"><Btn kind="primary" size="lg" iconEnd={I.arrow({})}>book a pitch</Btn></a>
               <a href="#pricing"><Btn kind="outline" size="lg">view pricing</Btn></a>

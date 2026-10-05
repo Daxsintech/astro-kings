@@ -28,7 +28,7 @@ export function Juniors(){
         <div className="relative z-10 mx-auto flex h-full max-w-4xl items-center justify-center px-6 text-center">
           <div className="pop text-center">
             <Eyebrow>football for u18s</Eyebrow>
-            <h1 className="hero-title mt-4 text-5xl font-semibold leading-[1.04] lowercase md:text-6xl">u18’s football at astro kings</h1>
+            <h1 className="hero-title mt-4 text-5xl font-semibold leading-[1.04] lowercase md:text-6xl">u18s football at astro kings</h1>
             <p className="mx-auto mt-4 max-w-xl text-[15px] leading-relaxed text-white/70">We’re the best place in Nottingham for junior parties and coaching.</p>
             <a href="#parties" className="mt-6 inline-block"><Btn kind="primary" iconEnd={I.arrow({})}>kids parties</Btn></a>
           </div>

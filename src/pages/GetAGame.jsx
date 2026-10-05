@@ -55,7 +55,7 @@ export function GetAGame(){
 
     // No endpoint configured yet - never pretend the registration was sent.
     if (!ENQUIRY_ENDPOINT) {
-      setErr(`Online sign-up isn't live yet — please email ${CONTACT.email} or call ${CONTACT.phone} to join the Subs Bench.`);
+      setErr(`Online sign-up isn’t live yet — please email ${CONTACT.email} or call ${CONTACT.phone} to join the Subs Bench.`);
       return;
     }
 

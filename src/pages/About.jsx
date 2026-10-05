@@ -17,7 +17,7 @@ export function About(){
   return (
     <div>
       <PageHead eyebrow="about astro kings" title="nottingham's home of 5-a-side"
-        sub="Since 2016 on Wigman Rd — four floodlit 4G pitches, hot showers, lockers and a café. Built for casual kickabouts, leagues, juniors and big events alike." />
+        sub="Since 2016 on Wigman Rd — five floodlit 4G 5-a-side pitches plus one big pitch, hot showers, lockers and a café. Built for casual kickabouts, leagues, juniors and big events alike." />
 
       <div className="mx-auto mt-10 max-w-6xl px-6">
         <div className="relative aspect-[21/9] w-full overflow-hidden rounded-[34px] fade-up">

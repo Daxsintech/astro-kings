@@ -30,7 +30,7 @@ export function Clubs(){
             <h3 className="mt-7 text-xl font-medium lowercase">winter training dates</h3>
             <p className="mt-2 text-[15px] leading-relaxed text-white/65">Our winter training prices begin at the start of September and run through to the end of April every year.</p>
             <h3 className="mt-6 text-xl font-medium lowercase">4g pitches are safer for your players</h3>
-            <p className="mt-2 text-[15px] leading-relaxed text-white/65">In winter, old sand-based pitches often become slippery in the rain — especially when it freezes. Our 4G is a true all-weather surface designed for moulded studs, so when other venues close in bad weather, we don't.</p>
+            <p className="mt-2 text-[15px] leading-relaxed text-white/65">In winter, old sand-based pitches often become slippery in the rain — especially when it freezes. Our 4G is a true all-weather surface designed for moulded studs, so when other venues close in bad weather, we don’t.</p>
           </div>
 
           {/* get in touch form */}

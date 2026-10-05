@@ -36,7 +36,7 @@ export function EnquiryForm({ cta = 'get in touch', placeholder = 'How can we he
 
     // No endpoint configured yet - never pretend the message was sent.
     if (!ENQUIRY_ENDPOINT) {
-      setErr(`Our online form isn't live yet — please email ${CONTACT.email} or call ${CONTACT.phone} and we'll get straight back to you.`);
+      setErr(`Our online form isn’t live yet — please email ${CONTACT.email} or call ${CONTACT.phone} and we’ll get straight back to you.`);
       return;
     }
 
