@@ -1,4 +1,4 @@
-/* PayAndPlay.jsx — U16s/U18s pay & play football. Mirrors the live page:
+/* PayAndPlay.jsx — U18s pay & play football. Mirrors the live page:
    hero → intro → daily pay-and-play prices → "next Neymar" prizes. */
 
 import { I } from '../lib/icons.jsx';
@@ -24,8 +24,8 @@ export function PayAndPlay(){
         <div className="absolute inset-0" style={{background:'linear-gradient(180deg, rgba(4,7,10,.42) 0%, rgba(4,7,10,.32) 38%, rgba(4,7,10,.94) 100%)'}}></div>
         <div className="relative z-10 mx-auto flex h-full max-w-4xl items-center justify-center px-6 text-center">
           <div className="pop text-center">
-            <Eyebrow>juniors · u16s</Eyebrow>
-            <h1 className="hero-title mt-4 text-5xl font-semibold leading-[1.04] lowercase md:text-7xl">u16s pay and play football</h1>
+            <Eyebrow>juniors · u18s</Eyebrow>
+            <h1 className="hero-title mt-4 text-5xl font-semibold leading-[1.04] lowercase md:text-7xl">u18s pay and play football</h1>
           </div>
         </div>
       </section>

@@ -24,7 +24,7 @@ const SOCIALS = [
 ];
 
 const FACILITIES = [
-  { ic:I.shield, t:'3G pitch surface',      d:'All our football pitches have a brand-new 3G surface.' },
+  { ic:I.shield, t:'4G pitch surface',      d:'All our football pitches have a brand-new 4G surface.' },
   { ic:I.bolt,   t:'floodlights',           d:'State-of-the-art LED floodlights for a bright, uniform light.' },
   { ic:I.ball,   t:'choose your pitch type', d:'Classic pitches have 4ft goals and Samba pitches have 6ft goals.' },
   { ic:I.shower, t:'changing facilities',   d:'Hot showers and secure changing facilities before and after the game.' },

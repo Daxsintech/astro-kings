@@ -10,7 +10,7 @@ import { Footer } from '../components/Nav.jsx';
 export function Pricing(){
   const [tab,setTab] = useState('hire');
   const memb = [
-    { n:'Pay & Play', price:'£350', unit:'/pp', note:'before 6pm, every day', feat:['2 players minimum','Off-peak slots','No commitment','Café discount'], tag:'' },
+    { n:'Pay & Play', price:'£3.50', unit:'/pp', note:'before 6pm, every day', feat:['2 players minimum','Off-peak slots','No commitment','Café discount'], tag:'' },
     { n:'Kings Club', price:'£39', unit:'/mo', note:'most popular', feat:['20% off all pitch hire','Priority booking window','Free bibs & match ball','League entry discount'], tag:'most popular' },
     { n:'Team Season', price:'£540', unit:'/block', note:'12-week league', feat:['Guaranteed weekly slot','League fixtures & table','Trophy & medals','Fixed price all season'], tag:'' },
   ];
