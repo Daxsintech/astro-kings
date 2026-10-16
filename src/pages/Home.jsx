@@ -173,7 +173,7 @@ function PitchCard({ p, i }){
             <div className="mt-1 text-[13px] text-white/50">{p.goals}</div>
           </div>
           <div className="text-right">
-            <div className="tnum text-2xl font-semibold">£{p.price}</div>
+            <div className="tnum text-2xl font-semibold">{p.price==null ? 'Enquire' : '£'+p.price}</div>
             <div className="-mt-1 text-[12px] text-white/45">{p.unit}</div>
           </div>
         </div>

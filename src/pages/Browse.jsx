@@ -92,7 +92,7 @@ export function Browse(){
                         {p.spec.map(s=><span key={s} className="glass rounded-full px-2.5 py-1">{s}</span>)}
                       </div>
                     </div>
-                    <div className="text-right"><div className="tnum text-2xl font-semibold">£{p.price}</div><div className="-mt-1 text-[12px] text-white/45">{p.unit}</div></div>
+                    <div className="text-right"><div className="tnum text-2xl font-semibold">{p.price==null ? 'Enquire' : '£'+p.price}</div><div className="-mt-1 text-[12px] text-white/45">{p.unit}</div></div>
                   </div>
                   {/* live availability lives in the booking system - link straight there */}
                   <div className="mt-4 flex flex-wrap items-center gap-3">

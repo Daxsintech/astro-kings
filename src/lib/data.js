@@ -12,12 +12,16 @@ export const ACADEMY_VIDEO = '/academy.mp4';     // background for the Academy (
 
 /* Prices here are DISPLAY ONLY. The actual amount charged is whatever Planyo
    calculates at booking time from the venue's pricing manager. If these drift
-   apart, customers see one price and are charged another - keep them in step. */
+   apart, customers see one price and are charged another - keep them in step.
+
+   price:null means the rate is not published — the card shows "Enquire"
+   instead of a figure. The Performance Zone is sold on enquiry, not on a
+   listed hourly rate. */
 export const PITCHES = [
   { id:'classic', name:'Classic 5-a-side', price:60, unit:'/hr', size:'5v5', goals:'12ft × 4ft goals', tag:'Most booked', desc:'Rebound boards · 4G surface', spec:['Rebound boards','12ft × 4ft goals','4G rubber-crumb'] },
   { id:'samba',   name:'Samba 5-a-side',   price:60, unit:'/hr', size:'5v5', goals:'12ft × 6ft goals', tag:'', desc:'Bigger goals · rebound boards', spec:['Rebound boards','12ft × 6ft goals','4G rubber-crumb'] },
   { id:'big',     name:'The Big One',      price:90, unit:'/hr', size:'9v9', goals:'9v9 goals', tag:'9v9', desc:'Convertible · FA configurable', spec:['9v9 goals','Convertible layout','LED floodlights'] },
-  { id:'zone',    name:'Performance Zone', price:30, unit:'/hr', size:'1-2-1', goals:'coaching space', tag:'1-2-1 & small groups', desc:'Coaching space · equipment included', spec:['Full coaching set-up','For 1–6 players','Equipment & footballs included'] },
+  { id:'zone',    name:'Performance Zone', price:null, unit:'', size:'1-2-1', goals:'coaching space', tag:'1-2-1 & small groups', desc:'Coaching space · equipment included', spec:['Full coaching set-up','For 1–6 players','Equipment & footballs included'] },
 ];
 
 /* On-the-hour slots across the opening week. The venue opens 10:00 Mon–Fri and
