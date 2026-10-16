@@ -193,7 +193,7 @@ export function Section({ eyebrow, title, action, children }){
       <div className="mb-7 flex items-end justify-between gap-4">
         <div>
           {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-          <h2 className={`hero-title text-4xl md:text-5xl font-semibold lowercase ${eyebrow?'mt-3':''}`}>{title}</h2>
+          <h2 className={`hero-title text-4xl md:text-5xl font-semibold ${eyebrow?'mt-3':''}`}>{title}</h2>
         </div>
         {action}
       </div>
@@ -220,7 +220,7 @@ export function FeatureTiles({ tiles, cols='md:grid-cols-2', aspect='aspect-[16/
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent"></div>
 
           <div className="absolute inset-x-0 bottom-0 p-5 text-center md:p-6">
-            <div className={`hero-title font-semibold lowercase transition-transform duration-500 group-hover:-translate-y-0.5 ${(t.big ?? big)?'text-3xl md:text-4xl':'text-xl md:text-2xl'}`}>{t.t}</div>
+            <div className={`hero-title font-semibold transition-transform duration-500 group-hover:-translate-y-0.5 ${(t.big ?? big)?'text-3xl md:text-4xl':'text-xl md:text-2xl'}`}>{t.t}</div>
             <div className="mt-1.5 text-[13.5px] leading-snug text-white/70">{t.d}</div>
             <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[11px] uppercase tracking-wide text-white/90 backdrop-blur-sm transition-colors duration-300 group-hover:accent-bg group-hover:text-[#0b0b0b]">
               explore <span className="transition-transform duration-300 group-hover:translate-x-1" style={{width:13,height:13}}>{I.arrow({})}</span>
