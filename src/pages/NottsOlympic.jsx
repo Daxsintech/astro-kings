@@ -61,13 +61,13 @@ const FACTS = [
 const SUPPORT = [
   { ic:I.star,   t:'The 1882 supporters club', c:RED,
     d:'Join the community chat, share your ideas and experiences, be part of the conversations, and help carry out the plans for the season and the future of the club. Help run it, vote on key decisions, have your say.',
-    cta:'i want to support', to:PATREON, ext:true },
+    cta:'I want to support', to:PATREON, ext:true },
   { ic:I.ball,   t:'The 100 club', c:GREEN,
     d:'£10 a number, drawn monthly. The winner takes a big share of the pot, and everything left over goes straight back into the club.',
-    cta:'100 club sign up', to:'#partner' },   /* TODO: real 100 Club signup link */
+    cta:'100 Club sign up', to:'#partner' },   /* TODO: real 100 Club signup link */
   { ic:I.trophy, t:'Sponsor the club', c:RED,
     d:'Sponsor a junior or first-team player, an NSL league game or the cup run, or advertise in the matchday programme. Options for every budget, from £5 to £1,500.',
-    cta:'i can sponsor', to:'#partner' },
+    cta:'I can sponsor', to:'#partner' },
 ];
 
 const PARTNERS = [

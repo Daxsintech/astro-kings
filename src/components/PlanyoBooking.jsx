@@ -95,7 +95,7 @@ export function PlanyoBooking(){
         {/* step 1 — pitch */}
         <div className="mb-3 flex items-center justify-between">
           <div className="text-[12px] uppercase tracking-[.18em] text-white/60">1 · choose your pitch</div>
-          {active ? <button onClick={()=>setPitch(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">clear</button> : null}
+          {active ? <button onClick={()=>setPitch(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">Clear</button> : null}
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {PITCHES.map(p => <PitchTile key={p.id} p={p} active={pitch === p.id} onPick={() => setPitch(p.id)} />)}
@@ -104,7 +104,7 @@ export function PlanyoBooking(){
         {/* step 2 — day */}
         <div className="mb-3 mt-10 flex items-center justify-between">
           <div className="text-[12px] uppercase tracking-[.18em] text-white/60">2 · choose a day</div>
-          {day ? <button onClick={()=>setDay(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">clear</button> : null}
+          {day ? <button onClick={()=>setDay(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">Clear</button> : null}
         </div>
         <div className="-mx-6 flex gap-2 overflow-x-auto px-6 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {DAYS.map((d,i) => {
@@ -126,9 +126,9 @@ export function PlanyoBooking(){
           <div className="text-center md:text-left">
             <div className="text-[12px] uppercase tracking-[.18em] text-white/60">3 · check availability &amp; book</div>
             <div className="mt-1.5 text-[16px] font-medium">
-              {active ? active.name : <span className="text-white/50">any pitch</span>}
+              {active ? active.name : <span className="text-white/50">Any pitch</span>}
               <span className="text-white/30"> · </span>
-              {dayLabel || <span className="text-white/50">any day</span>}
+              {dayLabel || <span className="text-white/50">Any day</span>}
             </div>
             <p className="mt-1 text-[12.5px] text-white/60">Opens our secure Planyo booking page with real-time availability &amp; card payment.</p>
           </div>

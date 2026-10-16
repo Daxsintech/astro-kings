@@ -44,7 +44,7 @@ function QuickBook({ compact=false }){
           </select>
         </Field>
 
-        <Btn kind="primary" className="h-12" icon={I.search({})} onClick={()=>{ store.day=dayKey; store.players=size; go('browse'); }}>search</Btn>
+        <Btn kind="primary" className="h-12" icon={I.search({})} onClick={()=>{ store.day=dayKey; store.players=size; go('browse'); }}>Search</Btn>
       </div>
     </Glass>
   );
@@ -129,11 +129,11 @@ export function Hero({ variant='stacked' }){
 
         <div className="absolute right-0 top-[10%] text-right fade-up" style={{animationDelay:'.2s'}}>
           <div className="flex items-center justify-end gap-3"><span className="h-px w-24 bg-white/40" style={{transform:'rotate(18deg)'}}></span><span className="tnum text-4xl font-semibold md:text-5xl">65k+</span></div>
-          <div className="mt-1 text-[13px] text-white/60">games played here</div>
+          <div className="mt-1 text-[13px] text-white/60">Games played here</div>
         </div>
         <div className="absolute bottom-[8%] left-0 hidden fade-up xl:block" style={{animationDelay:'.24s'}}>
           <div className="flex items-center gap-3"><span className="tnum text-4xl font-semibold md:text-5xl">6</span><span className="h-px w-24 bg-white/40" style={{transform:'rotate(-18deg)'}}></span></div>
-          <div className="mt-1 text-[13px] text-white/60">floodlit 4G pitches</div>
+          <div className="mt-1 text-[13px] text-white/60">Floodlit 4G pitches</div>
         </div>
 
         {/* the main event — one booking CTA, front and centre */}
@@ -150,8 +150,8 @@ export function Hero({ variant='stacked' }){
           <h1 className="hero-title text-[16vw] font-semibold leading-[.95]">Brand<br/>new 4G<br/><span className="accent-text">pitches</span></h1>
           <p className="mt-4 max-w-xs text-[14px] leading-snug text-white/85">Football, leagues, birthday parties, stag, hen &amp; corporate events.</p>
           <div className="mt-5 flex items-center gap-8">
-            <div><div className="tnum text-3xl font-semibold">6</div><div className="text-[12px] text-white/60">floodlit 4G pitches</div></div>
-            <div><div className="tnum text-3xl font-semibold">65k+</div><div className="text-[12px] text-white/60">games played</div></div>
+            <div><div className="tnum text-3xl font-semibold">6</div><div className="text-[12px] text-white/60">Floodlit 4G pitches</div></div>
+            <div><div className="tnum text-3xl font-semibold">65k+</div><div className="text-[12px] text-white/60">Games played</div></div>
           </div>
         </div>
       </div>
@@ -178,8 +178,8 @@ function PitchCard({ p, i }){
           </div>
         </div>
         <div className="mt-4 flex gap-2">
-          <Btn kind="glass" size="sm" className="flex-1" onClick={()=>{ store.venue=p.id; go('venue',{p:p.id}); }}>details</Btn>
-          <Btn kind="primary" size="sm" className="flex-1" iconEnd={I.arrow({})} onClick={()=>{ store.venue=p.id; go('booking',{p:p.id}); }}>book</Btn>
+          <Btn kind="glass" size="sm" className="flex-1" onClick={()=>{ store.venue=p.id; go('venue',{p:p.id}); }}>Details</Btn>
+          <Btn kind="primary" size="sm" className="flex-1" iconEnd={I.arrow({})} onClick={()=>{ store.venue=p.id; go('booking',{p:p.id}); }}>Book</Btn>
         </div>
       </div>
     </Glass>

@@ -74,8 +74,8 @@ export function Browse(){
         {/* results */}
         <div>
           <div className="mb-5 flex items-center justify-between">
-            <div className="text-[14px] text-white/55"><span className="text-white">{list.length}</span> formats · <span className="text-white">{keyLabel(dayKey)}</span> · {TIME_BANDS[band].label}</div>
-            <div className="hidden items-center gap-2 text-[13px] text-white/45 md:flex">sort <span className="glass glass-soft rounded-full px-3 py-1.5 text-white/75">soonest</span></div>
+            <div className="text-[14px] text-white/55"><span className="text-white">{list.length}</span> options · <span className="text-white">{keyLabel(dayKey)}</span> · {TIME_BANDS[band].label}</div>
+            <div className="hidden items-center gap-2 text-[13px] text-white/45 md:flex">Sort <span className="glass glass-soft rounded-full px-3 py-1.5 text-white/75">Soonest</span></div>
           </div>
           <div className="space-y-4">
             {list.map((p,i)=>(
@@ -100,7 +100,7 @@ export function Browse(){
                       className="tnum rounded-xl px-4 py-2 text-[13px] accent-bg text-[#0b0b0b] font-medium transition hover:opacity-90">
                       check availability &amp; book
                     </button>
-                    <button onClick={()=>{ store.venue=p.id; store.day=dayKey; go('venue',{p:p.id}); }} className="ml-auto inline-flex items-center gap-1.5 text-[13px] accent-text">pitch details<span style={{width:15,height:15}}>{I.chev({})}</span></button>
+                    <button onClick={()=>{ store.venue=p.id; store.day=dayKey; go('venue',{p:p.id}); }} className="ml-auto inline-flex items-center gap-1.5 text-[13px] accent-text">Pitch details<span style={{width:15,height:15}}>{I.chev({})}</span></button>
                   </div>
                 </div>
               </Glass>
