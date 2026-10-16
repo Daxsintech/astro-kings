@@ -27,15 +27,15 @@ export function Venue({ params }){
 
         {/* gallery */}
         <div className="grid gap-3 md:grid-cols-[2fr_1fr] fade-up">
-          <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[30px]">
+          <div className="relative aspect-16/10 w-full overflow-hidden rounded-[30px]">
             <img src={PITCH_PHOTO} alt={p.name} className="absolute inset-0 h-full w-full object-cover" />
           </div>
           <div className="grid grid-rows-2 gap-3">
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl md:aspect-auto">
+            <div className="relative aspect-16/10 overflow-hidden rounded-3xl md:aspect-auto">
               <img src={PITCH_PHOTO} alt={p.name+' surface'} className="absolute inset-0 h-full w-full object-cover" />
               <span className="absolute bottom-3 left-3 text-[11px] uppercase tracking-wide text-white/70">surface · 4g</span>
             </div>
-            <div className="relative aspect-[16/10] overflow-hidden rounded-3xl md:aspect-auto">
+            <div className="relative aspect-16/10 overflow-hidden rounded-3xl md:aspect-auto">
               <img src={PITCH_PHOTO} alt={p.name+' floodlights'} className="absolute inset-0 h-full w-full object-cover" />
               <span className="absolute bottom-3 left-3 text-[11px] uppercase tracking-wide text-white/70">floodlights</span>
             </div>
@@ -85,7 +85,7 @@ export function Venue({ params }){
             <div className="lg:sticky lg:top-28">
               <Glass strong className="rounded-[28px] p-6">
                 <div className="flex items-end justify-between">
-                  <div><div className="tnum text-4xl font-semibold">{p.price==null ? 'Enquire' : '£'+p.price}</div><div className="text-[13px] text-white/45">{p.price==null ? 'hire by arrangement' : p.unit+' · off-peak −20%'}</div></div>
+                  <div><div className="tnum text-4xl font-semibold">{p.price==null ? 'Enquire' : '£'+p.price}</div><div className="text-[13px] text-white/45">{p.price==null ? 'hire by arrangement' : p.unit}</div></div>
                   <Tag>{p.size}</Tag>
                 </div>
                 <div className="mt-5 text-[12px] uppercase tracking-wide text-white/60">pick a date</div>
@@ -94,7 +94,7 @@ export function Venue({ params }){
                 <div className="mt-3 grid grid-cols-3 gap-2">
                   {slotsInBand('evening').map(s=>(
                     <button key={s} onClick={()=>setTime(s)}
-                      className={`tnum rounded-xl py-2.5 text-[13px] transition ${time===s?'text-[#0b0b0b] accent-bg':'glass glass-soft text-white/80 hover:bg-white/12'}`}>
+                      className={`tnum rounded-xl py-2.5 text-[13px] transition ${time===s?'text-[#0b0b0b] accent-bg':'glass glass-soft text-white/80'}`}>
                       {s}
                     </button>
                   ))}

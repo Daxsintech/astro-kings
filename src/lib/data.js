@@ -13,6 +13,9 @@ export const ACADEMY_VIDEO = '/academy.mp4';     // background for the Academy (
 /* Prices here are DISPLAY ONLY. The actual amount charged is whatever Planyo
    calculates at booking time from the venue's pricing manager. If these drift
    apart, customers see one price and are charged another - keep them in step.
+   Checked against astro-kings.com (Oct 2026): Classic £60/hr is confirmed.
+   Samba and The Big One are NOT published there — confirm them in Planyo's
+   pricing manager.
 
    price:null means the rate is not published — the card shows "Enquire"
    instead of a figure. The Performance Zone is sold on enquiry, not on a
