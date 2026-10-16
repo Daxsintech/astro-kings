@@ -36,8 +36,8 @@ export function Contact(){
           <Glass className="rounded-3xl p-6">
             <div className="text-[12px] uppercase tracking-wide text-white/45">opening hours</div>
             <div className="mt-4 space-y-2 text-[14px] text-white/75">
-              <div className="flex justify-between"><span>Mon – Fri</span><span className="tnum text-white/60">08:00 – 22:00</span></div>
-              <div className="flex justify-between"><span>Sat – Sun</span><span className="tnum text-white/60">08:00 – 20:00</span></div>
+              <div className="flex justify-between"><span>Mon – Fri</span><span className="tnum text-white/60">10am – 10pm</span></div>
+              <div className="flex justify-between"><span>Sat – Sun</span><span className="tnum text-white/60">9am – 8pm</span></div>
             </div>
           </Glass>
           <div className="aspect-square w-full overflow-hidden rounded-3xl glass">

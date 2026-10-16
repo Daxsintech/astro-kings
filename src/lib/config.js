@@ -40,7 +40,7 @@ export const PLANYO_PITCH_RESOURCE = {
   classic: null,
   samba:   null,
   big:     null,
-  mini:    null,
+  zone:    null,
 };
 
 /* Build the Planyo booking URL, optionally pre-set to one resource and start
