@@ -14,24 +14,31 @@ export const ACADEMY_VIDEO = '/academy.mp4';     // background for the Academy (
    calculates at booking time from the venue's pricing manager. If these drift
    apart, customers see one price and are charged another - keep them in step.
    Checked against astro-kings.com (Oct 2026): Classic £60/hr is confirmed.
-   Samba, The Big One and Mini Soccer prices are NOT published there — confirm
-   them in Planyo's pricing manager. */
+   Samba and The Big One are NOT published there — confirm them in Planyo's
+   pricing manager.
+
+   price:null means the rate is not published — the card shows "Enquire"
+   instead of a figure. The Performance Zone is sold on enquiry, not on a
+   listed hourly rate. */
 export const PITCHES = [
   { id:'classic', name:'Classic 5-a-side', price:60, unit:'/hr', size:'5v5', goals:'12ft × 4ft goals', tag:'Most booked', desc:'Rebound boards · 4G surface', spec:['Rebound boards','12ft × 4ft goals','4G rubber-crumb'] },
   { id:'samba',   name:'Samba 5-a-side',   price:60, unit:'/hr', size:'5v5', goals:'12ft × 6ft goals', tag:'', desc:'Bigger goals · rebound boards', spec:['Rebound boards','12ft × 6ft goals','4G rubber-crumb'] },
   { id:'big',     name:'The Big One',      price:90, unit:'/hr', size:'9v9', goals:'9v9 goals', tag:'9v9', desc:'Convertible · FA configurable', spec:['9v9 goals','Convertible layout','LED floodlights'] },
-  { id:'mini',    name:'Mini Soccer',      price:90, unit:'/hr', size:'7v7', goals:'12ft × 6ft goals', tag:'FA approved', desc:'For juniors · FA approved', spec:['FA approved','12ft × 6ft goals','Junior friendly'] },
+  { id:'zone',    name:'Performance Zone', price:null, unit:'', size:'1-2-1', goals:'coaching space', tag:'1-2-1 & small groups', desc:'Coaching space · equipment included', spec:['Full coaching set-up','For 1–6 players','Equipment & footballs included'] },
 ];
 
-/* full operating day, on-the-hour slots from 08:00 to 21:00 (venue closes 22:00) */
+/* On-the-hour slots across the opening week. The venue opens 10:00 Mon–Fri and
+   09:00 Sat–Sun, and closes 22:00 weekdays / 20:00 weekends, so this single list
+   runs 10:00–21:00 — the hours bookable on every day. Real availability is
+   always confirmed by Planyo at the booking step. */
 export const SLOTS = (() => {
   const out = [];
-  for (let h = 8; h < 22; h++) out.push(`${String(h).padStart(2,'0')}:00`);
+  for (let h = 10; h < 22; h++) out.push(`${String(h).padStart(2,'0')}:00`);
   return out;
 })();
 
 export const TIME_BANDS = {
-  morning:   { label:'08–12', from:8,  to:12 },
+  morning:   { label:'10–12', from:10, to:12 },
   afternoon: { label:'12–17', from:12, to:17 },
   evening:   { label:'17–22', from:17, to:22 },
 };

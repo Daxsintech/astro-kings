@@ -171,7 +171,7 @@ export function GetAGame(){
                 <span className="mx-auto grid h-16 w-16 place-items-center rounded-full accent-bg text-[#0b0b0b]"><span style={{width:30,height:30}}>{I.check({})}</span></span>
                 <h3 className="hero-title mt-5 text-2xl font-semibold">You’re on the bench</h3>
                 <p className="mx-auto mt-3 max-w-xs text-[14px] text-white/60">Thanks {f.name.split(' ')[0]}! We’ll add you to the Subs Bench WhatsApp group and ping you when a game needs a sub.</p>
-                <Btn kind="outline" className="mt-6" onClick={()=>{ setDone(false); setF({name:'',email:'',phone:'',age:''}); setDays([]); setConfirm(false); }}>register someone else</Btn>
+                <Btn kind="outline" className="mt-6" onClick={()=>{ setDone(false); setF({name:'',email:'',phone:'',age:''}); setDays([]); setConfirm(false); }}>Register someone else</Btn>
               </div>
             ) : (
               <>

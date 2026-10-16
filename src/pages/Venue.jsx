@@ -85,7 +85,7 @@ export function Venue({ params }){
             <div className="lg:sticky lg:top-28">
               <Glass strong className="rounded-[28px] p-6">
                 <div className="flex items-end justify-between">
-                  <div><div className="tnum text-4xl font-semibold">£{p.price}</div><div className="text-[13px] text-white/45">{p.unit}</div></div>
+                  <div><div className="tnum text-4xl font-semibold">{p.price==null ? 'Enquire' : '£'+p.price}</div><div className="text-[13px] text-white/45">{p.price==null ? 'hire by arrangement' : p.unit}</div></div>
                   <Tag>{p.size}</Tag>
                 </div>
                 <div className="mt-5 text-[12px] uppercase tracking-wide text-white/60">pick a date</div>
@@ -99,8 +99,8 @@ export function Venue({ params }){
                     </button>
                   ))}
                 </div>
-                <div className="mt-2 text-center text-[11px] text-white/60">live availability is confirmed at the booking step</div>
-                <Btn kind="primary" size="lg" className="mt-4 w-full" iconEnd={I.arrow({})} onClick={()=>{ store.venue=p.id; store.time=time; store.day=dayKey; go('booking',{p:p.id,t:time}); }}>check availability &amp; book</Btn>
+                <div className="mt-2 text-center text-[11px] text-white/60">Live availability is confirmed at the booking step</div>
+                <Btn kind="primary" size="lg" className="mt-4 w-full" iconEnd={I.arrow({})} onClick={()=>{ store.venue=p.id; store.time=time; store.day=dayKey; go('booking',{p:p.id,t:time}); }}>Check availability &amp; book</Btn>
                 <div className="mt-3 flex items-center justify-center gap-2 text-[12px] text-white/60"><span style={{width:14,height:14}}>{I.lock({})}</span> secure card payment via Planyo</div>
               </Glass>
             </div>

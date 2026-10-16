@@ -25,15 +25,12 @@ const EVENTS = [
 ];
 
 export function Events(){
-  const ideas = ['big match','skills coaching','team-building games','tournament','food & event extras','alcohol served','private room'];
+  const ideas = ['big match','skills coaching','team-building games','tournament'];
   const selfManaged = ['parking','changing & storage','pitch hire','referees'];
   const managed = ['parking','changing & storage','pitch hire','referees','tournament set-up','full event management','all the stress taken away'];
   const extras = [
-    'Food from £4.50 a head — all dietary requirements catered for',
     'Medals & trophy pack',
     'Photography & video of the day',
-    'Private room hire for awards',
-    'Bar facilities available',
   ];
   const jump = (id)=>(e)=>{ e.preventDefault(); scrollToId(id); };
 
@@ -110,7 +107,7 @@ export function Events(){
           <div className="fade-up">
             <h2 className="hero-title text-3xl md:text-4xl font-semibold">Choose a package or build your own</h2>
             <p className="mt-4 text-[15px] leading-relaxed text-white/70">Starting from simple pitch hire, build an event to suit your staff or clients. Run it yourself or let us run it for you — team-building games, tournaments, a big match, coaching, pretty much anything you can dream up.</p>
-            <p className="mt-3 text-[15px] leading-relaxed text-white/70">Food starts at £4.50 per person, but we can lay on a banquet fit for a king. Photos, trophies, medals or a full event pack — just tell us what you’re after.</p>
+            <p className="mt-3 text-[15px] leading-relaxed text-white/70">Photos, trophies, medals or a full event pack — just tell us what you’re after.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="#events-enquiry" onClick={jump('events-enquiry')}><Btn kind="primary" iconEnd={I.arrow({})}>Enquire now</Btn></a>
             </div>
@@ -150,7 +147,7 @@ export function Events(){
           <div className="pointer-events-none absolute! -right-16 -top-16 h-56 w-56 rounded-full opacity-20 blur-3xl" style={{background:VIOLET}}></div>
           {/* TEMPORARY Pexels placeholder (not Astro Kings) — see IMAGE_SOURCES.md */}
           <CardPhoto src="/images/events-celebrate.webp" alt="Young players celebrating together at the side of the pitch" width={1280} height={1024} position="center 40%" className="-mx-7 -mt-7 mb-7 md:-mx-8 md:-mt-8" />
-          <p className="relative text-[15px] leading-relaxed text-white/70">Complete your event with food, drink and awards. We hold an alcohol licence, rooms are available for hire, and the on-site kitchen can serve food fit for a king — why not add a video and photos of the day?</p>
+          <p className="relative text-[15px] leading-relaxed text-white/70">Finish the day properly with medals and a trophy for the winners — why not add a video and photos of the day too?</p>
           <div className="relative mt-6 grid gap-x-6 gap-y-3 sm:grid-cols-2">
             {extras.map((e,i)=>(
               <div key={i} className="flex items-center gap-2.5 text-[14px] text-white/75"><span style={{width:15,height:15,color:i%2?VIOLET:AMBER}}>{I.check({})}</span>{e}</div>
@@ -176,7 +173,7 @@ export function Events(){
                 <div className="flex items-center gap-3 text-white/60"><span className="grid h-9 w-9 place-items-center rounded-full" style={{background:AMBER+'22',color:AMBER}}><span style={{width:16,height:16}}>{I.pin({})}</span></span>{CONTACT.addr}</div>
               </div>
             </div>
-            <EnquiryForm cta="Send enquiry" source="events & corporate" placeholder="e.g. 24 staff, tournament + food, a Friday afternoon…" />
+            <EnquiryForm cta="Send enquiry" source="events & corporate" placeholder="e.g. 24 staff, a tournament, a Friday afternoon…" />
           </div>
         </Glass>
       </section>

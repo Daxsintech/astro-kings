@@ -21,6 +21,10 @@ export function Chip({ active, onClick, children }){
   );
 }
 
+/* Format chips come from PITCHES so a pitch added or removed can never leave a
+   chip that filters to an empty list. */
+const FORMATS = [...new Set(PITCHES.map(p=>p.size))];
+
 export function Browse(){
   const [fmt,setFmt] = useState('all');   // always land on 'all' — users narrow down themselves
   const [dayKey,setDayKey] = useState(isKey(store.day) ? store.day : todayKey());
@@ -31,7 +35,7 @@ export function Browse(){
   return (
     <div>
       <PageHead eyebrow="find a pitch" title="Search availability"
-        sub="One venue, four floodlit formats. Pick a date and time, then jump straight into a slot.">
+        sub="Six floodlit 4G pitches at one venue. Pick a date and time, then jump straight into a slot.">
         <Glass strong className="flex items-center gap-3 rounded-2xl px-5 py-4">
           <span className="text-white/45" style={{width:18,height:18}}>{I.pin({})}</span>
           <div><div className="text-[14px]">Astro Kings · Wigman Rd</div><div className="text-[12px] text-white/45">Nottingham NG8 4PB</div></div>
@@ -45,7 +49,7 @@ export function Browse(){
             <div className="text-[12px] uppercase tracking-wide text-white/45">format</div>
             <div className="mt-3 flex flex-wrap gap-2">
               <Chip active={fmt==='all'} onClick={()=>setFmt('all')}>all</Chip>
-              {['5v5','7v7','9v9'].map(s=><Chip key={s} active={fmt===s} onClick={()=>setFmt(s)}>{s}</Chip>)}
+              {FORMATS.map(s=><Chip key={s} active={fmt===s} onClick={()=>setFmt(s)}>{s}</Chip>)}
             </div>
 
             <div className="mt-6 text-[12px] uppercase tracking-wide text-white/45">date</div>
@@ -70,8 +74,8 @@ export function Browse(){
         {/* results */}
         <div>
           <div className="mb-5 flex items-center justify-between">
-            <div className="text-[14px] text-white/55"><span className="text-white">{list.length}</span> formats · <span className="text-white">{keyLabel(dayKey)}</span> · {TIME_BANDS[band].label}</div>
-            <div className="hidden items-center gap-2 text-[13px] text-white/45 md:flex">sort <span className="glass glass-soft rounded-full px-3 py-1.5 text-white/75">soonest</span></div>
+            <div className="text-[14px] text-white/55"><span className="text-white">{list.length}</span> options · <span className="text-white">{keyLabel(dayKey)}</span> · {TIME_BANDS[band].label}</div>
+            <div className="hidden items-center gap-2 text-[13px] text-white/45 md:flex">Sort <span className="glass glass-soft rounded-full px-3 py-1.5 text-white/75">Soonest</span></div>
           </div>
           <div className="space-y-4">
             {list.map((p,i)=>(
@@ -88,7 +92,7 @@ export function Browse(){
                         {p.spec.map(s=><span key={s} className="glass rounded-full px-2.5 py-1">{s}</span>)}
                       </div>
                     </div>
-                    <div className="text-right"><div className="tnum text-2xl font-semibold">£{p.price}</div><div className="-mt-1 text-[12px] text-white/45">{p.unit}</div></div>
+                    <div className="text-right"><div className="tnum text-2xl font-semibold">{p.price==null ? 'Enquire' : '£'+p.price}</div><div className="-mt-1 text-[12px] text-white/45">{p.unit}</div></div>
                   </div>
                   {/* live availability lives in the booking system - link straight there */}
                   <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -96,7 +100,7 @@ export function Browse(){
                       className="tnum rounded-xl px-4 py-2 text-[13px] accent-bg text-[#0b0b0b] font-medium transition hover:opacity-90">
                       check availability &amp; book
                     </button>
-                    <button onClick={()=>{ store.venue=p.id; store.day=dayKey; go('venue',{p:p.id}); }} className="ml-auto inline-flex items-center gap-1.5 text-[13px] accent-text">pitch details<span style={{width:15,height:15}}>{I.chev({})}</span></button>
+                    <button onClick={()=>{ store.venue=p.id; store.day=dayKey; go('venue',{p:p.id}); }} className="ml-auto inline-flex items-center gap-1.5 text-[13px] accent-text">Pitch details<span style={{width:15,height:15}}>{I.chev({})}</span></button>
                   </div>
                 </div>
               </Glass>

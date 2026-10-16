@@ -20,9 +20,9 @@ export function Parties(){
     { n:'Championship', price:'£85', dur:'1 hour', tag:'', c:CYAN,
       feat:['12 players included','30 min coaching','30 min match play','LED-lit 4G pitch','Optional cabin hire +£25'] },
     { n:'Premiership', price:'£159.99', dur:'2 hours', tag:'most popular', c:PINK,
-      feat:['12 players included','45 min games + 45 min match','Party photo & hot food','Certificate for every player','Trophy for the birthday child','Extra players £14.99 each'] },
+      feat:['12 players included','45 min games + 45 min match','Party photo','Certificate for every player','Trophy for the birthday child','Extra players £14.99 each'] },
     { n:'Kings', price:'£249.50', dur:'2 hours', tag:'all-in', c:CYAN,
-      feat:['Everything in Premiership','Birthday cake','Sweet party bags + medals for all','Special medal, trophy & football','Extra players £24.99 each'] },
+      feat:['Everything in Premiership','Party bags + medals for all','Special medal, trophy & football','Extra players £24.99 each'] },
   ];
   const jump = (id)=>(e)=>{ e.preventDefault(); scrollToId(id); };
 
@@ -81,7 +81,7 @@ export function Parties(){
         </div>
 
         <Glass strong className="mt-4 flex flex-col items-center justify-between gap-4 rounded-3xl p-7 text-center md:flex-row md:text-left">
-          <div><div className="text-[16px] font-medium">Every party is built around your child</div><div className="mt-1 text-[14px] text-white/55">Skills training, matches, games or a mini-tournament — plus photos & video. All dietary requirements catered for.</div></div>
+          <div><div className="text-[16px] font-medium">Every party is built around your child</div><div className="mt-1 text-[14px] text-white/55">Skills training, matches, games or a mini-tournament — plus photos & video.</div></div>
           <a href="#party-enquiry" onClick={jump('party-enquiry')}><Btn kind="glass" iconEnd={I.arrow({})}>Talk to the team</Btn></a>
         </Glass>
       </Section>

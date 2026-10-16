@@ -32,14 +32,16 @@ export const PLANYO_RESOURCE_IDS = [58246, 58245, 58244, 185941];
 /* Map each of our pitch cards (PITCHES id) to its Planyo resource_id, so the
    pitch picker on #booking opens Planyo's booking form with that pitch
    already selected.
-   Mini Soccer has no Planyo resource of its own (Planyo lists only Big One,
-   Classic, Samba and Performance Zone), so it stays null and opens the full
-   calendar. Never guess an ID — a wrong one books the wrong pitch. */
+   Never guess an ID — a wrong one books the wrong pitch. */
 export const PLANYO_PITCH_RESOURCE = {
   classic: 58245,
   samba:   58244,
   big:     58246,
-  mini:    null,
+  /* The Zone DOES have a Planyo resource (185941), but Dan asked for it to be
+     sold on enquiry rather than quoted and booked, so it is deliberately left
+     null: the booking page sends people to its enquiry form instead. Set it to
+     185941 if that decision is ever reversed. */
+  zone:    null,
 };
 
 /* Build the Planyo booking URL.

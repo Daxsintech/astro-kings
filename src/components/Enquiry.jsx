@@ -18,7 +18,7 @@ import { Turnstile } from './Turnstile.jsx';
 
 const INPUT = 'w-full bg-transparent text-[14px] outline-hidden placeholder:text-white/35';
 
-export function EnquiryForm({ cta = 'get in touch', placeholder = 'How can we help?', labels = true, source = 'website' }){
+export function EnquiryForm({ cta = 'Get in touch', placeholder = 'How can we help?', labels = true, source = 'website' }){
   const [v,setV]   = useState({ name:'', phone:'', email:'', message:'' });
   const [trap,setTrap] = useState('');   // honeypot — see submitForm.js
   const [token,setToken] = useState('');  // Cloudflare Turnstile — see config.js

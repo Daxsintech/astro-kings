@@ -28,12 +28,12 @@ const KIT = ['2 coaching pods','Speed ladders & hurdles','Mannequins','Mini-goal
 
 const RATES = [
   {
-    who:'Players & small groups', price:'£30', unit:'/hr', tag:'',
+    who:'Players & small groups', tag:'',
     note:'Hire the Zone for yourself — up to 1 hour',
     feat:['Full coaching set-up, ready to go','Suitable for 1–6 players','Equipment & footballs included'],
   },
   {
-    who:'Coaches — full day or night', price:'from £60', unit:'/day', tag:'best for coaches',
+    who:'Coaches — full day or night', tag:'best for coaches',
     note:'Take the Zone and run your own clients',
     feat:['The space is exclusively yours','Full coaching set-up included','Advertising board on site','Featured on our socials','Recurring slots get priority'],
   },
@@ -74,7 +74,7 @@ export function PerformanceZone(){
             </p>
             <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
               <a href="#performancezone-hire" onClick={(e)=>{e.preventDefault(); scrollToId('performancezone-hire');}}><Btn kind="primary" size="lg" iconEnd={I.arrow({})}>Book your session</Btn></a>
-              <a href="#rates" onClick={(e)=>{e.preventDefault(); scrollToId('rates');}}><Btn kind="outline" size="lg">See rates</Btn></a>
+              <a href="#rates" onClick={(e)=>{e.preventDefault(); scrollToId('rates');}}><Btn kind="outline" size="lg">How it works</Btn></a>
             </div>
           </div>
         </div>
@@ -136,18 +136,17 @@ export function PerformanceZone(){
 
       {/* ---------- rates ---------- */}
       <div id="rates"></div>
-      <Section eyebrow="hire rates" title="Pick your hire">
+      <Section eyebrow="how to hire" title="Two ways to use the Zone">
         <div className="grid gap-4 md:grid-cols-2">
           {RATES.map((r,i)=>(
             <Glass key={r.who} strong={!!r.tag} className={`flex flex-col rounded-[28px] p-7 transition-transform duration-300 hover:-translate-y-1 fade-up ${r.tag?'accent-ring':''}`} style={{animationDelay:(i*.06)+'s'}}>
               {r.tag ? <Tag accent className="mb-3 self-start">{r.tag}</Tag> : <span className="mb-3 h-6"></span>}
               <div className="text-[17px] font-medium">{r.who}</div>
               <div className="mt-1 text-[13px] text-white/45">{r.note}</div>
-              <div className="mt-4 flex items-end gap-1"><span className="tnum text-5xl font-semibold" style={r.tag?{color:VOLT}:undefined}>{r.price}</span>{r.unit?<span className="mb-1.5 text-[13px] text-white/45">{r.unit}</span>:null}</div>
               <ul className="mt-6 flex-1 space-y-2.5 text-[14px] text-white/75">
                 {r.feat.map(f=><li key={f} className="flex items-center gap-2.5"><span className="grid h-6 w-6 shrink-0 place-items-center rounded-full" style={{background:(r.tag?VOLT:CYAN)+'1e',color:r.tag?VOLT:CYAN}}><span style={{width:12,height:12}}>{I.check({})}</span></span>{f}</li>)}
               </ul>
-              <a href="#performancezone-hire" onClick={(e)=>{e.preventDefault(); scrollToId('performancezone-hire');}} className="mt-7"><Btn kind={r.tag?'primary':'outline'} size="lg" className="w-full">Hire now</Btn></a>
+              <a href="#performancezone-hire" onClick={(e)=>{e.preventDefault(); scrollToId('performancezone-hire');}} className="mt-7"><Btn kind={r.tag?'primary':'outline'} size="lg" className="w-full">Enquire about this</Btn></a>
             </Glass>
           ))}
         </div>

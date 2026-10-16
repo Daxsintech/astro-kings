@@ -172,7 +172,7 @@ export function Footer(){
               <div className="text-[11px] uppercase tracking-[.2em] text-white/60">visit us</div>
               <ul className="mt-4 space-y-3 text-[14px] text-white/65">
                 <li className="flex items-start gap-2.5"><span className="mt-0.5 text-white/40" style={{width:17,height:17}}>{I.pin({})}</span><a href={CONTACT.maps} target="_blank" rel="noreferrer" className="hover:text-white">{CONTACT.addr}</a></li>
-                <li className="flex items-center gap-2.5"><span className="text-white/40" style={{width:17,height:17}}>{I.clock({})}</span>Mon–Fri 08–22 · Sat–Sun 08–20</li>
+                <li className="flex items-center gap-2.5"><span className="text-white/40" style={{width:17,height:17}}>{I.clock({})}</span>Mon–Fri 10am–10pm · Sat–Sun 9am–8pm</li>
                 <li className="flex items-center gap-2.5"><span className="accent-text">●</span><a href={'tel:'+CONTACT.phone.replace(/\s/g,'')} className="hover:text-white">{CONTACT.phone}</a></li>
                 <li className="flex items-center gap-2.5"><span className="accent-text">●</span><a href={'mailto:'+CONTACT.email} className="hover:text-white">{CONTACT.email}</a></li>
               </ul>

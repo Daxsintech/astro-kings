@@ -28,6 +28,10 @@ const PRODUCTS = [
 
 const CATS = ['all','footballs','grip socks','club kits','training wear','accessories'];
 
+/* The CATS values double as the matching key against each product's `cat`, so
+   they stay lowercase. Only the chip's visible label is capitalised. */
+const catLabel = (c) => c.charAt(0).toUpperCase() + c.slice(1);
+
 export function Shop(){
   const [cat,setCat] = useState('all');
   const list = cat==='all' ? PRODUCTS : PRODUCTS.filter(p=>p.cat===cat);
@@ -59,7 +63,7 @@ export function Shop(){
               return (
                 <button key={t} type="button" aria-pressed={on} onClick={()=>setCat(t)}
                   className="rounded-full px-3 py-1.5 text-[12px] font-medium transition focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2"
-                  style={on ? {background:TEAL,color:'#06100f',outlineColor:TEAL} : {background:TEAL+'1a',color:TEAL,outlineColor:TEAL}}>{t}</button>
+                  style={on ? {background:TEAL,color:'#06100f',outlineColor:TEAL} : {background:TEAL+'1a',color:TEAL,outlineColor:TEAL}}>{catLabel(t)}</button>
               );
             })}
           </div>
@@ -75,7 +79,7 @@ export function Shop(){
               <p className="mt-1.5 flex-1 text-[13.5px] leading-relaxed text-white/60">{p.desc}</p>
               <div className="mt-4 flex items-center gap-2 border-t pt-3">
                 <span style={{width:13,height:13,color:TEAL}}>{I.pin({})}</span>
-                <span className="text-[12.5px] text-white/50">in stock at reception</span>
+                <span className="text-[12.5px] text-white/50">In stock at reception</span>
               </div>
             </Glass>
           ))}

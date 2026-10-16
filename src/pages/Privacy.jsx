@@ -59,7 +59,7 @@ export function Privacy(){
           </ul>
         </Section>
 
-        <Section title="children's information">
+        <Section title="Children’s information">
           <p>
             Some of our activities are for under-18s. Where a sign-up relates to
             a child, we ask that a parent or guardian completes the form. We only

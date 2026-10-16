@@ -22,8 +22,10 @@ import { EnquiryForm } from '../components/Enquiry.jsx';
 import { Section } from './Home.jsx';
 import { Footer } from '../components/Nav.jsx';
 
-/* external platforms the league runs on today — TODO: confirm with the client */
-const BOOK_TRIAL_URL   = 'https://kids-fl.class4kids.co.uk/';
+/* Free-trial sign-ups go to our own enquiry form (#trial-form), not to an
+   external booking platform — the ClassForKids schedule was empty, so the
+   button sent parents to a page with nothing on it.
+   TODO: confirm the league tables link below with the client. */
 const LEAGUE_TABLES_URL = 'https://kfl1.leaguerepublic.com/';
 
 /* the three leagues — colour-coded, in progression order */
@@ -93,7 +95,8 @@ const FAQ = [
   { q:'How do I book a free trial?',
     a:'Just pick your preferred training day through our booking system and come along — no commitment until you’ve tried a session.' },
   { q:'Is there a minimum term? How do I cancel?',
-    a:'There’s no minimum term and you can cancel anytime — we just ask for 28 days’ notice by email.' },
+    a:<>There’s no minimum term and you can cancel anytime — we just ask for 28 days’ notice by email to{' '}
+      <a href="mailto:admin@astro-kings.com" className="underline hover:text-white">admin@astro-kings.com</a>.</> },
 ];
 
 /* club colours — white / blue / orange (matches the KFL crest + hero) */
@@ -230,7 +233,7 @@ export function Coaching(){
         <div className="mx-auto max-w-2xl px-6 pt-5 pb-12 text-center md:pt-9">
           <p className="mx-auto max-w-xl text-[15px] leading-relaxed text-white/75">A league for every child, regardless of ability. Weekly coaching, real matchdays, your own team &amp; kit — start with a free trial.</p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-            <a href={BOOK_TRIAL_URL} target="_blank" rel="noreferrer"><Btn kind="primary" size="lg" iconEnd={I.arrow({})}>Start a free trial</Btn></a>
+            <a href="#trial-form" onClick={(e)=>{e.preventDefault(); scrollToId('trial-form');}}><Btn kind="primary" size="lg" iconEnd={I.arrow({})}>Start a free trial</Btn></a>
             <a href="#register" onClick={(e)=>{e.preventDefault(); scrollToId('register');}}><Btn kind="outline" size="lg">How it works</Btn></a>
           </div>
         </div>
@@ -358,10 +361,10 @@ export function Coaching(){
               ))}
             </div>
             <div className="mt-7">
-              <a href={BOOK_TRIAL_URL} target="_blank" rel="noreferrer"><Btn kind="primary" size="lg" iconEnd={I.arrow({})}>Book online now</Btn></a>
+              <a href="#trial-form" onClick={(e)=>{e.preventDefault(); scrollToId('trial-form');}}><Btn kind="primary" size="lg" iconEnd={I.arrow({})}>Book online now</Btn></a>
             </div>
           </div>
-          <Glass strong className="rounded-[30px] p-7">
+          <Glass strong id="trial-form" className="rounded-[30px] p-7">
             <div className="text-[12px] uppercase tracking-wide text-white/45">quick enquiry</div>
             <p className="mt-2 text-[13px] text-white/55">Prefer we come back to you? Drop your details here.</p>
             <div className="mt-4">

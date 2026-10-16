@@ -44,7 +44,7 @@ function QuickBook({ compact=false }){
           </select>
         </Field>
 
-        <Btn kind="primary" className="h-12" icon={I.search({})} onClick={()=>{ store.day=dayKey; store.players=size; go('browse'); }}>search</Btn>
+        <Btn kind="primary" className="h-12" icon={I.search({})} onClick={()=>{ store.day=dayKey; store.players=size; go('browse'); }}>Search</Btn>
       </div>
     </Glass>
   );
@@ -129,11 +129,11 @@ export function Hero({ variant='stacked' }){
 
         <div className="absolute right-0 top-[10%] text-right fade-up" style={{animationDelay:'.2s'}}>
           <div className="flex items-center justify-end gap-3"><span className="h-px w-24 bg-white/40" style={{transform:'rotate(18deg)'}}></span><span className="tnum text-4xl font-semibold md:text-5xl">65k+</span></div>
-          <div className="mt-1 text-[13px] text-white/60">games played here</div>
+          <div className="mt-1 text-[13px] text-white/60">Games played here</div>
         </div>
         <div className="absolute bottom-[8%] left-0 hidden fade-up xl:block" style={{animationDelay:'.24s'}}>
-          <div className="flex items-center gap-3"><span className="tnum text-4xl font-semibold md:text-5xl">4</span><span className="h-px w-24 bg-white/40" style={{transform:'rotate(-18deg)'}}></span></div>
-          <div className="mt-1 text-[13px] text-white/60">floodlit 4G pitches</div>
+          <div className="flex items-center gap-3"><span className="tnum text-4xl font-semibold md:text-5xl">6</span><span className="h-px w-24 bg-white/40" style={{transform:'rotate(-18deg)'}}></span></div>
+          <div className="mt-1 text-[13px] text-white/60">Floodlit 4G pitches</div>
         </div>
 
         {/* the main event — one booking CTA, front and centre */}
@@ -150,8 +150,8 @@ export function Hero({ variant='stacked' }){
           <h1 className="hero-title text-[16vw] font-semibold leading-[.95]">Brand<br/>new 4G<br/><span className="accent-text">pitches</span></h1>
           <p className="mt-4 max-w-xs text-[14px] leading-snug text-white/85">Football, leagues, birthday parties, stag, hen &amp; corporate events.</p>
           <div className="mt-5 flex items-center gap-8">
-            <div><div className="tnum text-3xl font-semibold">4</div><div className="text-[12px] text-white/60">floodlit 4G pitches</div></div>
-            <div><div className="tnum text-3xl font-semibold">65k+</div><div className="text-[12px] text-white/60">games played</div></div>
+            <div><div className="tnum text-3xl font-semibold">6</div><div className="text-[12px] text-white/60">Floodlit 4G pitches</div></div>
+            <div><div className="tnum text-3xl font-semibold">65k+</div><div className="text-[12px] text-white/60">Games played</div></div>
           </div>
         </div>
       </div>
@@ -173,13 +173,13 @@ function PitchCard({ p, i }){
             <div className="mt-1 text-[13px] text-white/50">{p.goals}</div>
           </div>
           <div className="text-right">
-            <div className="tnum text-2xl font-semibold">£{p.price}</div>
+            <div className="tnum text-2xl font-semibold">{p.price==null ? 'Enquire' : '£'+p.price}</div>
             <div className="-mt-1 text-[12px] text-white/45">{p.unit}</div>
           </div>
         </div>
         <div className="mt-4 flex gap-2">
-          <Btn kind="glass" size="sm" className="flex-1" onClick={()=>{ store.venue=p.id; go('venue',{p:p.id}); }}>details</Btn>
-          <Btn kind="primary" size="sm" className="flex-1" iconEnd={I.arrow({})} onClick={()=>{ store.venue=p.id; go('booking',{p:p.id}); }}>book</Btn>
+          <Btn kind="glass" size="sm" className="flex-1" onClick={()=>{ store.venue=p.id; go('venue',{p:p.id}); }}>Details</Btn>
+          <Btn kind="primary" size="sm" className="flex-1" iconEnd={I.arrow({})} onClick={()=>{ store.venue=p.id; go('booking',{p:p.id}); }}>Book</Btn>
         </div>
       </div>
     </Glass>
@@ -193,7 +193,7 @@ export function Section({ eyebrow, title, action, children }){
       <div className="mb-7 flex items-end justify-between gap-4">
         <div>
           {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-          <h2 className={`hero-title text-4xl md:text-5xl font-semibold lowercase ${eyebrow?'mt-3':''}`}>{title}</h2>
+          <h2 className={`hero-title text-4xl md:text-5xl font-semibold ${eyebrow?'mt-3':''}`}>{title}</h2>
         </div>
         {action}
       </div>
@@ -220,7 +220,7 @@ export function FeatureTiles({ tiles, cols='md:grid-cols-2', aspect='aspect-16/1
           <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-white/25 to-transparent"></div>
 
           <div className="absolute inset-x-0 bottom-0 p-5 text-center md:p-6">
-            <div className={`hero-title font-semibold lowercase transition-transform duration-500 group-hover:-translate-y-0.5 ${(t.big ?? big)?'text-3xl md:text-4xl':'text-xl md:text-2xl'}`}>{t.t}</div>
+            <div className={`hero-title font-semibold transition-transform duration-500 group-hover:-translate-y-0.5 ${(t.big ?? big)?'text-3xl md:text-4xl':'text-xl md:text-2xl'}`}>{t.t}</div>
             <div className="mt-1.5 text-[13.5px] leading-snug text-white/70">{t.d}</div>
             <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1.5 text-[11px] uppercase tracking-wide text-white/90 backdrop-blur-xs transition-colors duration-300 group-hover:accent-bg group-hover:text-[#0b0b0b]">
               explore <span className="transition-transform duration-300 group-hover:translate-x-1" style={{width:13,height:13}}>{I.arrow({})}</span>

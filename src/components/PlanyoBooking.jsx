@@ -57,7 +57,7 @@ function PitchTile({ p, active, onPick }){
       </div>
       <div className="mt-4 flex items-end justify-between">
         <div className="flex items-baseline gap-1">
-          <span className="tnum text-2xl font-semibold accent-text">£{p.price}</span>
+          <span className="tnum text-2xl font-semibold accent-text">{p.price==null ? 'Enquire' : '£'+p.price}</span>
           <span className="text-[12px] text-white/60">{p.unit}</span>
         </div>
         <span className={`grid h-6 w-6 place-items-center rounded-full border transition-colors ${active?'accent-bg border-transparent text-[#0b0b0b]':'border-white/20 text-transparent'}`}>
@@ -73,7 +73,10 @@ export function PlanyoBooking(){
   const [day, setDay]     = useState(DAYS[0]);         // today, changeable
   const active = PITCHES.find(p => p.id === pitch) || null;
   const resId  = pitch ? PLANYO_PITCH_RESOURCE[pitch] : null;
-  const href   = planyoUrl(resId, day ? iso(day) : null);
+  /* Anything without a published price (the Performance Zone) is hired by
+     arrangement, so it goes to that page's enquiry form instead of Planyo. */
+  const byEnquiry = !!active && active.price == null;
+  const href   = byEnquiry ? '#performancezone' : planyoUrl(resId, day ? iso(day) : null);
 
   const dayLabel = day
     ? day.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' })
@@ -95,7 +98,7 @@ export function PlanyoBooking(){
         {/* step 1 — pitch */}
         <div className="mb-3 flex items-center justify-between">
           <div className="text-[12px] uppercase tracking-[.18em] text-white/60">1 · choose your pitch</div>
-          {active ? <button onClick={()=>setPitch(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">clear</button> : null}
+          {active ? <button onClick={()=>setPitch(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">Clear</button> : null}
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {PITCHES.map(p => <PitchTile key={p.id} p={p} active={pitch === p.id} onPick={() => setPitch(p.id)} />)}
@@ -104,7 +107,7 @@ export function PlanyoBooking(){
         {/* step 2 — day */}
         <div className="mb-3 mt-10 flex items-center justify-between">
           <div className="text-[12px] uppercase tracking-[.18em] text-white/60">2 · choose a day</div>
-          {day ? <button onClick={()=>setDay(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">clear</button> : null}
+          {day ? <button onClick={()=>setDay(null)} className="text-[12px] text-white/60 underline-offset-2 hover:text-white/80 hover:underline">Clear</button> : null}
         </div>
         <div className="-mx-6 flex gap-2 overflow-x-auto px-6 pb-1 scrollbar-none [&::-webkit-scrollbar]:hidden">
           {DAYS.map((d,i) => {
@@ -126,14 +129,18 @@ export function PlanyoBooking(){
           <div className="text-center md:text-left">
             <div className="text-[12px] uppercase tracking-[.18em] text-white/60">3 · check availability &amp; book</div>
             <div className="mt-1.5 text-[16px] font-medium">
-              {active ? active.name : <span className="text-white/50">any pitch</span>}
+              {active ? active.name : <span className="text-white/50">Any pitch</span>}
               <span className="text-white/30"> · </span>
-              {dayLabel || <span className="text-white/50">any day</span>}
+              {dayLabel || <span className="text-white/50">Any day</span>}
             </div>
-            <p className="mt-1 text-[12.5px] text-white/60">Opens our secure Planyo booking page with real-time availability &amp; card payment.</p>
+            <p className="mt-1 text-[12.5px] text-white/60">{byEnquiry
+              ? 'The Performance Zone is hired by arrangement — tell us what you need and we\u2019ll confirm a slot.'
+              : 'Opens our secure Planyo booking page with real-time availability \u0026 card payment.'}</p>
           </div>
-          <a href={href} target="_blank" rel="noreferrer" className="w-full md:w-auto">
-            <Btn kind="primary" size="lg" className="w-full md:w-auto" iconEnd={I.arrow({})}>Check availability &amp; book</Btn>
+          <a href={href} {...(byEnquiry ? {} : { target:'_blank', rel:'noreferrer' })} className="w-full md:w-auto">
+            <Btn kind="primary" size="lg" className="w-full md:w-auto" iconEnd={I.arrow({})}>
+              {byEnquiry ? 'Enquire about the Zone' : <>Check availability &amp; book</>}
+            </Btn>
           </a>
         </Glass>
 
