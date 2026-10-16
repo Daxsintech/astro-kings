@@ -95,7 +95,8 @@ const FAQ = [
   { q:'How do I book a free trial?',
     a:'Just pick your preferred training day through our booking system and come along — no commitment until you’ve tried a session.' },
   { q:'Is there a minimum term? How do I cancel?',
-    a:'There’s no minimum term and you can cancel anytime — we just ask for 28 days’ notice by email.' },
+    a:<>There’s no minimum term and you can cancel anytime — we just ask for 28 days’ notice by email to{' '}
+      <a href="mailto:admin@astro-kings.com" className="underline hover:text-white">admin@astro-kings.com</a>.</> },
 ];
 
 /* club colours — white / blue / orange (matches the KFL crest + hero) */
