@@ -234,7 +234,7 @@ export function Coaching(){
           <p className="mx-auto max-w-xl text-[15px] leading-relaxed text-white/75">A league for every child, regardless of ability. Weekly coaching, real matchdays, your own team &amp; kit — start with a free trial.</p>
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
             <a href="#trial-form" onClick={(e)=>{e.preventDefault(); scrollToId('trial-form');}}><Btn kind="primary" size="lg" iconEnd={I.arrow({})}>Start a free trial</Btn></a>
-            <a href="#register" onClick={(e)=>{e.preventDefault(); scrollToId('register');}}><Btn kind="outline" size="lg">How it works</Btn></a>
+            <a href="#how-it-works" onClick={(e)=>{e.preventDefault(); scrollToId('how-it-works');}}><Btn kind="outline" size="lg">How it works</Btn></a>
           </div>
         </div>
       </section>
@@ -328,6 +328,7 @@ export function Coaching(){
       </section>
 
       {/* ---------- how the trial works ---------- */}
+      <div id="how-it-works">
       <Section eyebrow="how it works" title="From free trial to matchday">
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {STEPS.map((s,i)=>{
@@ -342,6 +343,7 @@ export function Coaching(){
           })}
         </div>
       </Section>
+      </div>
 
       {/* ---------- register ---------- */}
       <section id="register" className="mx-auto mt-24 max-w-6xl px-6">
