@@ -20,7 +20,7 @@ export function Parties(){
     { n:'Championship', price:'£85', dur:'1 hour', tag:'', c:CYAN,
       feat:['12 players included','30 min coaching','30 min match play','LED-lit 4G pitch','Optional cabin hire +£25'] },
     { n:'Premiership', price:'£159.99', dur:'2 hours', tag:'most popular', c:PINK,
-      feat:['12 players included','45 min games + 45 min match','Party photo','Certificate for every player','Trophy for the birthday child','Extra players £14.99 each'] },
+      feat:['12 players included','45 min games + 45 min match','Pizza for all the players','Party photo','Certificate for every player','Trophy for the birthday child','Extra players £14.99 each'] },
     { n:'Kings', price:'£249.50', dur:'2 hours', tag:'all-in', c:CYAN,
       feat:['Everything in Premiership','Party bags + medals for all','Special medal, trophy & football','Extra players £24.99 each'] },
   ];
@@ -75,7 +75,7 @@ export function Parties(){
               <ul className="mt-6 flex-1 space-y-3 text-[14px] text-white/75">
                 {m.feat.map(f=><li key={f} className="flex items-center gap-3"><span className="grid h-6 w-6 shrink-0 place-items-center rounded-full" style={{background:m.c+'1e',color:m.c}}><span style={{width:13,height:13}}>{I.check({})}</span></span>{f}</li>)}
               </ul>
-              <a href="#party-enquiry" onClick={jump('party-enquiry')} className="mt-7"><Btn kind={i===1?'primary':'outline'} size="lg" className="w-full">book {m.n.toLowerCase()}</Btn></a>
+              <a href="#party-enquiry" onClick={jump('party-enquiry')} className="mt-7"><Btn kind={i===1?'primary':'outline'} size="lg" className="w-full">Book {m.n}</Btn></a>
             </Glass>
           ))}
         </div>
