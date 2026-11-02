@@ -49,15 +49,19 @@ const TRAINING = [
 
 /* the 8 teams. `logo` is a real badge dropped into /public — if the file isn't
    there yet, the Crest falls back to the emoji + colour placeholder. */
+/* The eight KFL teams, confirmed by Dan on 2 Nov 2026 along with the real
+   crests. Sharks and Ducks were placeholder names the club has never used —
+   they are Eagles and Rhinos. The a/b colours are the gradient behind each
+   crest and are taken from the artwork itself. */
 const TEAMS = [
-  { name:'Dragons',  emoji:'🐉', a:'#F97316', b:'#DC2626', logo:'/team-dragons.png' },
+  { name:'Dragons',  emoji:'🐉', a:'#FACC15', b:'#DC2626', logo:'/team-dragons.png' },
   { name:'Wasps',    emoji:'🐝', a:'#FACC15', b:'#B45309', logo:'/team-wasps.png' },
   { name:'Bears',    emoji:'🐻', a:'#D97706', b:'#78350F', logo:'/team-bears.png' },
-  { name:'Lions',    emoji:'🦁', a:'#FCD34D', b:'#D97706', logo:'/team-lions.png' },
-  { name:'Sharks',   emoji:'🦈', a:'#38BDF8', b:'#1D4ED8', logo:'/team-sharks.png' },
-  { name:'Hawks',    emoji:'🦅', a:'#818CF8', b:'#3730A3', logo:'/team-hawks.png' },
-  { name:'Panthers', emoji:'🐆', a:'#E879F9', b:'#7E22CE', logo:'/team-panthers.png' },
-  { name:'Ducks',    emoji:'🦆', a:'#34D399', b:'#0F766E', logo:'/team-ducks.png' },
+  { name:'Lions',    emoji:'🦁', a:'#FB923C', b:'#C2410C', logo:'/team-lions.png' },
+  { name:'Eagles',   emoji:'🦅', a:'#CBD5E1', b:'#334155', logo:'/team-eagles.png' },
+  { name:'Hawks',    emoji:'🦅', a:'#4ADE80', b:'#15803D', logo:'/team-hawks.png' },
+  { name:'Panthers', emoji:'🐆', a:'#A855F7', b:'#6B21A8', logo:'/team-panthers.png' },
+  { name:'Rhinos',   emoji:'🦏', a:'#38BDF8', b:'#1D4ED8', logo:'/team-rhinos.png' },
 ];
 
 /* how the free trial → team works */
