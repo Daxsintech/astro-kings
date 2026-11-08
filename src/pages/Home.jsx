@@ -236,12 +236,12 @@ export function FeatureTiles({ tiles, cols='md:grid-cols-2', aspect='aspect-16/1
 /* The 8 headline tiles — booking first (primary goal), club-building close behind. */
 const HOME_TILES = [
   { t:'Book a pitch',              d:'Brand-new 4G pitches · book online in minutes', to:'booking',         img:PITCH_PHOTO },
-  { t:'Kids coaching',             d:'Notts Olympic kids league & weekly coaching',     to:'coaching',        img:'/coaching.jpg' },
-  { t:'Notts Olympic FC',          d:'The club behind the centre — follow & support',   to:'nottsolympic',    img:'/juniors-poster.jpg' },
-  { t:'Book the Performance Zone', d:'1-2-1 & small-group coaching space for hire',     to:'performancezone', img:'/academy-poster.jpg' },
-  { t:'Book an event',             d:'Zorb football, darts, tournaments & more',        to:'events',          img:'/corporate.jpg' },
-  { t:'Kids football party',       d:'Parties from just £4 per child — fully hosted',   to:'parties',         img:'/party.jpg' },
-  { t:'Social Kicks',              d:'Casual pick-up games — join the WhatsApp group',  to:'getagame',        img:'/subs.jpg' },
+  { t:'Kids coaching',             d:'Notts Olympic kids league & weekly coaching',     to:'coaching',        img:'/images/tile-coaching.webp' },
+  { t:'Notts Olympic FC',          d:'The club behind the centre — follow & support',   to:'nottsolympic',    img:'/images/tile-notts-olympic.webp' },
+  { t:'Book the Performance Zone', d:'1-2-1 & small-group coaching space for hire',     to:'performancezone', img:'/images/tile-performance-zone.webp' },
+  { t:'Book an event',             d:'Zorb football, darts, tournaments & more',        to:'events',          img:'/images/tile-events.webp' },
+  { t:'Kids football party',       d:'Parties from just £4 per child — fully hosted',   to:'parties',         img:'/images/tile-parties.webp' },
+  { t:'Social Kicks',              d:'Casual pick-up games — join the WhatsApp group',  to:'getagame',        img:'/images/tile-social-kicks.webp' },
   /* TEMPORARY Pexels placeholder (not Astro Kings) — swap for a real shop/product photo; see IMAGE_SOURCES.md */
   { t:'The football shop',         d:'Balls, grip socks & Notts Olympic kit',           to:'shop',            img:'/images/shop-tile.webp' },
 ];
