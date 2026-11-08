@@ -48,6 +48,19 @@ not say otherwise. Originals are in `images-src/` (not committed).
 | `subs.jpg` | Home | unknown | unconfirmed | partly — official from behind, a player's back | unknown | in use. EXIF "Google Inc. 2016": likely saved from Google |
 | `team-bears.png`, `team-dragons.png`, `team-ducks.png`, `team-hawks.png`, `team-lions.png`, `team-panthers.png`, `team-sharks.png`, `team-wasps.png` | Coaching | unknown | unconfirmed | no (team badges) | n/a | in use |
 
+### Home menu tiles (`public/images/tile-*.webp`, added Nov 2026)
+
+| File | Where used | Source | Licence | Identifiable people | Status |
+|---|---|---|---|---|---|
+| `tile-coaching.webp` | Home tile: Kids coaching | supplied by Ayuba (coach's hands with a tactics board) | **unconfirmed — confirm source / licence** | no | in use. Note: the board shows a basketball court |
+| `tile-notts-olympic.webp` | Home tile: Notts Olympic FC | Notts Olympic club crest, placed on the site background | club's own logo — **owner to confirm the club's OK** | no | in use |
+| `tile-performance-zone.webp` | Home tile: Performance Zone | supplied by Ayuba; appears to be a club's own social-media photo | **unconfirmed — confirm source / permission** | yes — adults | in use |
+| `tile-events.webp` | Home tile: Book an event | supplied by Ayuba (party venue, not Astro Kings) | **unconfirmed — confirm source / licence** | no | in use. Four big-club crests (Juventus, Barcelona, Liverpool, Real Madrid) painted out and blurred into the background. Stopgap: replace with a real Astro Kings event photo |
+| `tile-parties.webp` | Home tile: Kids football party | Astro Kings' own promo graphic (real party room) | Astro Kings' own | no | in use. Whole poster shown (including its text), stretched to the 16:10 tile (owner's choice). Ask Dan for the original photo without text |
+| `tile-social-kicks.webp` | Home tile: Social Kicks | supplied by Ayuba; real game at an artificial pitch | **unconfirmed — confirm source / permission** | yes — teens and adults | in use. Confirm consent for under-18s |
+
+The previous Home tile images (`coaching.jpg`, `juniors-poster.jpg`, `academy-poster.jpg`, `corporate.jpg`, `party.jpg`, `subs.jpg`) are no longer used on the Home tiles; some are still used elsewhere.
+
 ### Videos
 
 | File | Where used | Source | Licence | Status |
